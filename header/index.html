@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Header</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-cubes"></i></div>
+          <span class="logo-text">كود <span>ستايل</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-desktop">
+          <a href="#" class="nav-link active">الرئيسية</a>
+
+          <div class="nav-item">
+            <a href="#" class="nav-link"
+              >الخدمات
+              <i
+                class="fa-solid fa-chevron-down"
+                style="font-size: 10px; margin-right: 6px"
+              ></i
+            ></a>
+            <div class="dropdown">
+              <a href="#" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">تصميم المواقع</div>
+                  <div class="dropdown-desc">تصاميم عصرية ومتجاوبة</div>
+                </div>
+              </a>
+              <a href="#" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <i class="fa-solid fa-palette"></i>
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">الهوية البصرية</div>
+                  <div class="dropdown-desc">شعارات وهويات متكاملة</div>
+                </div>
+              </a>
+              <a href="#" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">تطوير البرمجيات</div>
+                  <div class="dropdown-desc">حلول تقنية متقدمة</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <a href="#" class="nav-link">المشاريع</a>
+          <a href="#" class="nav-link">المقالات</a>
+          <a href="#" class="nav-link">من نحن</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="header-actions">
+          <button class="icon-btn" id="searchBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <button class="cta-btn">ابدأ الآن</button>
+          <button class="icon-btn menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars bar-icon"></i>
+            <i class="fa-solid fa-xmark close-icon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile" id="navMobile">
+      <a href="#" class="mobile-nav-link"
+        >الرئيسية <i class="fa-solid fa-chevron-left"></i
+      ></a>
+      <a href="#" class="mobile-nav-link"
+        >الخدمات <i class="fa-solid fa-chevron-left"></i
+      ></a>
+      <a href="#" class="mobile-nav-link"
+        >المشاريع <i class="fa-solid fa-chevron-left"></i
+      ></a>
+      <a href="#" class="mobile-nav-link"
+        >المقالات <i class="fa-solid fa-chevron-left"></i
+      ></a>
+      <a href="#" class="mobile-nav-link"
+        >من نحن <i class="fa-solid fa-chevron-left"></i
+      ></a>
+      <button class="mobile-cta">ابدأ الآن</button>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+      <div class="search-box">
+        <div class="search-input-wrapper">
+          <i
+            class="fa-solid fa-magnifying-glass"
+            style="color: var(--muted)"
+          ></i>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="ابحث هنا..."
+            id="searchInput"
+          />
+          <button class="search-close" id="searchClose">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="search-results">
+          <div class="search-result-item">
+            <div class="search-result-icon">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+            <div class="search-result-text">
+              <h4>دليل استخدام المنصة</h4>
+              <p>تعلم كيفية الاستفادة من جميع المميزات</p>
+            </div>
+          </div>
+          <div class="search-result-item">
+            <div class="search-result-icon">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <div class="search-result-text">
+              <h4>تواصل مع الدعم الفني</h4>
+              <p>نحن هنا لمساعدتك على مدار الساعة</p>
+            </div>
+          </div>
+          <div class="search-result-item">
+            <div class="search-result-icon">
+              <i class="fa-solid fa-circle-question"></i>
+            </div>
+            <div class="search-result-text">
+              <h4>الأسئلة الشائعة</h4>
+              <p>إجابات على أكثر الأسئلة تكراراً</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo Content -->
+    <main class="demo-content">
+      <h1 style="text-align: center">welcome to Ahmed's website</h1>
+      <p>
+        هذا نص تجريبي لعرض كيفية ظهور المحتوى تحت الهيدر. يمكنك استبدال هذا النص
+        بأي محتوى تريده، مثل مقالات، صور، أو أي شيء آخر. الهدف هو إظهار كيف
+        يتفاعل الهيدر مع التمرير وكيف يظل ثابتًا في الأعلى أثناء تصفح الصفحة.
+      </p>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
