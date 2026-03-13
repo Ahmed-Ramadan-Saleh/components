@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  /* 1. Set a wide gradient background */
+  background: linear-gradient(
+    90deg,
+    #fff 0%,
+    #fff 40%,
+    #00d4aa 50%,
+    #fff 60%,
+    #fff 100%
+  );
+
+  /* 2. Make the background size huge */
+  background-size: 200% auto;
+
+  /* 3. Clip the background to the text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 4. Animate the background position */
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: -200% center;
+  }
+}
