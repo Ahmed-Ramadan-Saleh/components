@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.magnetic-area {
+  /* Invisible area that triggers the effect */
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px dashed #333;  Uncomment to see the area */
+}
+
+.btn {
+  padding: 20px 50px;
+  background: #00d4aa;
+  color: #0a0a0a;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none; /* Let events pass to parent */
+}
+
+/* Hover push effect */
+.btn:active {
+  transform: scale(0.95);
+}

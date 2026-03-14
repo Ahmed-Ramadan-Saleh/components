@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.img-container {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Apply the SVG Filter */
+  filter: url(#liquid);
+  transition: filter 0.5s;
+}
+
+/* Reset on hover to show "Normal" */
+.img-container:hover img {
+  filter: none;
+}

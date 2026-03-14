@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liquid Gooey Effect</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- The SVG Filter Definition (Invisible) -->
+    <svg style="position: absolute; width: 0; height: 0">
+      <defs>
+        <filter id="goo">
+          <!-- Blur the image -->
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <!-- Increase contrast to make blurred edges sharp again -->
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+            result="goo"
+          />
+          <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div class="gooey-container">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+    </div>
+  </body>
+</html>

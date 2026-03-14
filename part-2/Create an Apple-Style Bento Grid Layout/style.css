@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  background: #0f0f0f;
+  min-height: 100vh;
+  padding: 40px;
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+/* The Bento Container */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  grid-auto-rows: minmax(180px, auto); /* Row height */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Base Card Style */
+.card {
+  background: #1a1a1a;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: #555;
+}
+
+/* THE MAGIC: Spanning Columns and Rows */
+.wide {
+  grid-column: span 2; /* Takes 2 columns */
+}
+
+.tall {
+  grid-row: span 2; /* Takes 2 rows */
+}
+
+.hero {
+  grid-column: span 4; /* Full width header */
+  background: linear-gradient(135deg, #00d4aa, #00a88a);
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .wide,
+  .tall,
+  .hero {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+p {
+  margin: 0;
+  color: #888;
+  font-size: 14px;
+}

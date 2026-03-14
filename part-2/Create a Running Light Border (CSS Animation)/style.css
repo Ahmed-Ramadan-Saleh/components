@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+
+/* 1. The Container */
+.box {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden; /* Crucial: Hides the corners of the spinning gradient */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* 2. The Spinning Gradient (The "Light") */
+.box::before {
+  content: "";
+  position: absolute;
+  width: 150%; /* Bigger than container */
+  height: 150%;
+  background: conic-gradient(#00d4aa, #111 30%); /* Sharp line gradient */
+  animation: spin 3s linear infinite;
+}
+
+/* 3. The Inner Cover (The Mask) */
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 3px; /* This determines border thickness */
+  background: #111; /* Matches page background */
+  border-radius: 13px; /* Slightly smaller radius */
+  z-index: 1;
+}
+
+/* Content needs to be on top */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

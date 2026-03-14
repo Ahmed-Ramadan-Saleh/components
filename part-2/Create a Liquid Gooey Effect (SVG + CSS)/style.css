@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* THE MAGIC: Reference the SVG Filter */
+.gooey-container {
+  filter: url(#goo);
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blob {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: #00d4aa;
+  border-radius: 50%;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Two smaller blobs to merge */
+.blob.b1 {
+  transform: translate(-30px, -30px);
+}
+.blob.b2 {
+  transform: translate(30px, 30px);
+  background: #6366f1;
+}
+
+/* Hover Interaction */
+.gooey-container:hover .blob {
+  transform: translate(0, 0) scale(1.5);
+}
+
+.gooey-container:hover .blob.b2 {
+  transform: translate(0, 0) scale(0.5);
+}

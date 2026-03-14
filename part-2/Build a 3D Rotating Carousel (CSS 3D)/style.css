@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px; /* Key for 3D depth */
+  overflow: hidden;
+}
+
+.carousel {
+  width: 200px;
+  height: 250px;
+  position: relative;
+  transform-style: preserve-3d; /* Keep children in 3D space */
+  animation: rotate 20s linear infinite;
+}
+
+/* The Individual Cards */
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 212, 170, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+/* Positioning cards in a circle */
+/* 8 Cards = 360 / 8 = 45deg apart */
+.card:nth-child(1) {
+  transform: rotateY(0deg) translateZ(300px);
+}
+.card:nth-child(2) {
+  transform: rotateY(45deg) translateZ(300px);
+}
+.card:nth-child(3) {
+  transform: rotateY(90deg) translateZ(300px);
+}
+.card:nth-child(4) {
+  transform: rotateY(135deg) translateZ(300px);
+}
+.card:nth-child(5) {
+  transform: rotateY(180deg) translateZ(300px);
+}
+.card:nth-child(6) {
+  transform: rotateY(225deg) translateZ(300px);
+}
+.card:nth-child(7) {
+  transform: rotateY(270deg) translateZ(300px);
+}
+.card:nth-child(8) {
+  transform: rotateY(315deg) translateZ(300px);
+}
+
+/* Animation */
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Pause on hover */
+.carousel:hover {
+  animation-play-state: paused;
+}

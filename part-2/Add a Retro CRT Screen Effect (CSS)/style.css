@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The "Monitor" Container */
+.crt {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0, 255, 0, 0.2); /* Green glow */
+  color: #0f0; /* Green text */
+  padding: 40px;
+  font-family: "Space Mono", monospace;
+}
+
+/* 1. Scanlines Overlay */
+.crt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    /* Vertical stripes */ rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* 2. Flicker Animation */
+.crt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+  z-index: 11;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  /* ... you can add more random steps */
+  100% {
+    opacity: 0.25;
+  }
+}
+
+/* 3. Screen Curvature (Optional subtle Vignette) */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+p {
+  font-size: 14px;
+  opacity: 0.8;
+}

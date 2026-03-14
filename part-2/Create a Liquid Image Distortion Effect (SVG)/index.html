@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liquid Distortion</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Define the SVG Filter (Hidden) -->
+    <svg style="position: absolute; width: 0; height: 0">
+      <defs>
+        <filter id="liquid">
+          <!-- Create Noise -->
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.015"
+            numOctaves="3"
+            result="noise"
+          />
+          <!-- Displace pixels based on noise -->
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="noise"
+            scale="50"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+      </defs>
+    </svg>
+
+    <div class="img-container">
+      <!-- Random placeholder image -->
+      <img src="https://picsum.photos/id/65/300/300" alt="Model" />
+    </div>
+  </body>
+</html>

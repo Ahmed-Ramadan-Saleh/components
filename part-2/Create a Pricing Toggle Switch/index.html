@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Toggle</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="toggle-container">
+      <span class="active" id="monthlyLabel">Monthly</span>
+      <div class="toggle-switch" id="toggle" onclick="togglePrice()">
+        <div class="toggle-knob"></div>
+      </div>
+      <span id="yearlyLabel">Yearly</span>
+    </div>
+
+    <div class="card">
+      <div class="price">
+        <span class="currency">$</span>
+        <span id="priceAmount">19</span>
+      </div>
+      <div class="save-badge" id="saveBadge">SAVE 20%</div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

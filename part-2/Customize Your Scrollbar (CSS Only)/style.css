@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: white;
+  font-family: system-ui;
+  height: 300vh; /* Force scroll */
+}
+
+.content {
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+p {
+  color: #888;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* ===== SCROLLBAR CSS ===== */
+
+/* Width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track (Background) */
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+/* Handle (The draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4aa;
+}
